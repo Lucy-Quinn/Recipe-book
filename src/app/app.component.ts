@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipe-book';
+  linkType: string = 'recipes';
+
+  onNavigate(linkValue){
+    this.linkType = linkValue
+  }
+
+
 }
