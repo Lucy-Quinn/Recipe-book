@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,10 +7,8 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
+  @Output() clickedRecipe = new EventEmitter<Recipe>()
 
-  createNewRecipe(name, desc, image) {
-    return new Recipe(name, desc, image)
-  }
   recipes: Recipe[] = [
     new Recipe(
       'Jacket Potato with Tuna',
@@ -23,6 +21,10 @@ export class RecipeListComponent implements OnInit {
       'https://joyfoodsunshine.com/wp-content/uploads/2022/03/chicken-fajitas-recipe-square.jpg'
     )
   ];
+
+  onClickItem(recipeItem){
+    this.clickedRecipe.emit(recipeItem)
+  }
 
   constructor() { }
 
