@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,16 +6,16 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() selectedLink = new EventEmitter<string>();
+  // @Output() selectedLink = new EventEmitter<string>();
   collapsed = true;
 
-  onSelect(linkType: string){
-    if(linkType === 'recipes'){
-      this.selectedLink.emit('recipes')
-    }else{
-        this.selectedLink.emit('shopping-list')
-    }
-  }
+  // onSelect(linkType: string){
+  //   if(linkType === 'recipes'){
+  //     this.selectedLink.emit('recipes')
+  //   }else{
+  //       this.selectedLink.emit('shopping-list')
+  //   }
+  // }
 
   constructor() { }
 

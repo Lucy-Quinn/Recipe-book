@@ -1,11 +1,11 @@
-<app-header
-  (selectedLink)="onNavigate($event)"
-></app-header>
+<app-header></app-header>
+<!--  (selectedLink)="onNavigate($event)"-->
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="linkType === 'recipes'"></app-recipes>
-      <app-shopping-list *ngIf="linkType === 'shopping-list'"></app-shopping-list>
+      <router-outlet></router-outlet>
+<!--      <app-recipes *ngIf="linkType === 'recipes'"></app-recipes>-->
+<!--      <app-shopping-list *ngIf="linkType === 'shopping-list'"></app-shopping-list>-->
     </div>
   </div>
 </div>

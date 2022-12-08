@@ -9,6 +9,8 @@ import {Ingredient} from "../../../shared/ingredient.model";
 })
 export class RecipeItemComponent implements OnInit {
 
+  @Input() recipeIndex: number;
+
   @Input() recipeItem: {
     name: string,
     description: string,
@@ -16,13 +18,8 @@ export class RecipeItemComponent implements OnInit {
     ingredients: Ingredient[]
   }
 
-  constructor(private recipeService: RecipeService) { }
-
-  handleOnClick(){
-    this.recipeService.selectedRecipe.emit(this.recipeItem);
-  }
-
   ngOnInit(): void {
+    console.log(this.recipeItem)
   }
 
 }

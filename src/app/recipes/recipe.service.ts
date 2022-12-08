@@ -40,4 +40,8 @@ export class RecipeService {
     return this.recipes.slice()
   }
 
+  getRecipeMethod(index: number){
+    return this.recipes[index]
+  }
+
 }
